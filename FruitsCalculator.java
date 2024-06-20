@@ -63,10 +63,12 @@ class NoPromotionStrategy implements FruitPromotionStrategy {
 
 //草莓折扣策略：限时打8折
 class StrawberryDiscountStrategy implements FruitPromotionStrategy {
+ private static final double STRAWBERRY_DISCOUNT = 0.8;
+
  @Override
  public double applyPromotion(Fruit fruit) {
 	 if (fruit instanceof Strawberry) {
-		 fruit.setDiscount(0.8);
+		 fruit.setDiscount(STRAWBERRY_DISCOUNT);
 		 return fruit.getDiscountAmount();
 	 }
      return fruit.getAmount();
